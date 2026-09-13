@@ -1,0 +1,9 @@
+# Python bytecode from the age-update script
+__pycache__/
+*.py[cod]
+
+# Editors / OS noise
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,301 +1,139 @@
 <div align="center">
 
-```
-  ███████╗███████╗ ██████╗ ███╗   ███╗███████╗████████╗██╗  ██╗██╗███╗   ██╗ ██████╗ 
-  ██╔════╝██╔════╝██╔════╝ ████╗ ████║██╔════╝╚══██╔══╝██║  ██║██║████╗  ██║██╔════╝ 
-  ███████╗█████╗  ██║  ███╗██╔████╔██║█████╗     ██║   ███████║██║██╔██╗ ██║██║  ███╗
-  ╚════██║██╔══╝  ██║   ██║██║╚██╔╝██║██╔══╝     ██║   ██╔══██║██║██║╚██╗██║██║   ██║
-  ███████║███████╗╚██████╔╝██║ ╚═╝ ██║███████╗   ██║   ██║  ██║██║██║ ╚████║╚██████╔╝
-  ╚══════╝╚══════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ 
+```text
+███████╗ █████╗  ██████╗██╗  ██╗██╗███╗   ██╗████████╗██╗  ██╗ █████╗ 
+██╔════╝██╔══██╗██╔════╝██║  ██║██║████╗  ██║╚══██╔══╝██║  ██║██╔══██╗
+███████╗███████║██║     ███████║██║██╔██╗ ██║   ██║   ███████║███████║
+╚════██║██╔══██║██║     ██╔══██║██║██║╚██╗██║   ██║   ██╔══██║██╔══██║
+███████║██║  ██║╚██████╗██║  ██║██║██║ ╚████║   ██║   ██║  ██║██║  ██║
+╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝
 ```
 
-### Advanced Developer | Open Source Contributor | Technology Enthusiast
+<img src="https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&weight=700&size=27&duration=2600&pause=750&color=FF0033&center=true&vCenter=true&width=760&height=52&lines=%24%20whoami%20-%3E%20sachintha%3Byoung%20made%20man%20of%20code%3BKegalle%20%2F%2F%20Sri%20Lanka%3B%24%20sudo%20.%2Fbuild_the_empire.sh%3Bomerta%20-%20the%20code%20never%20talks" alt="Sachintha — young made man of code, Kegalle, Sri Lanka" />
 
----
+<br/>
+
+<!-- AGE_BADGE:START -->
+<img src="https://img.shields.io/badge/AGE-16%20YEARS-FF0033?style=for-the-badge&labelColor=0B0B0B" alt="Age: 16 years" />
+<!-- AGE_BADGE:END -->
+<img src="https://img.shields.io/badge/BASE-KEGALLE%20%E2%80%A2%20SRI%20LANKA-FF0033?style=for-the-badge&labelColor=0B0B0B&logo=googlemaps&logoColor=FF0033" alt="Base: Kegalle, Sri Lanka" />
+<img src="https://img.shields.io/badge/SCHOOL-DR.%20N.M.%20PERERA%20CENTRAL%20COLLEGE-FFD700?style=for-the-badge&labelColor=0B0B0B" alt="School: Dr. N. M. Perera Central College" />
+<img src="https://img.shields.io/badge/STATUS-BUILDING%20THE%20EMPIRE-00FF66?style=for-the-badge&labelColor=0B0B0B&logo=githubactions&logoColor=00FF66" alt="Status: building the empire" />
+<img src="https://komarev.com/ghpvc/?username=sachintha82288-cpu&style=for-the-badge&color=FF0033&label=FAMILY+VISITORS" alt="Profile visitors" />
 
 </div>
 
-## Overview
-
-Welcome to my development space. This repository serves as the central hub for my work in software engineering, systems design, and collaborative innovation. Here you'll find a curated collection of projects demonstrating expertise across multiple technology domains.
-
 ---
 
-## Technical Expertise
+<!-- TERMINAL:START -->
+```text
+sachintha@kegalle:~$ sudo ./identify --verbose
 
-### Core Competencies
+  +--[ sachintha@kegalle ]---------------------+
+  | ALIAS.... Sachintha                        |
+  | AGE...... 16 years                         |
+  | BORN..... 2009-12-11                       |
+  | BASE..... Kegalle, Sri Lanka               |
+  | SCHOOL... Dr. N. M. Perera Central College |
+  | RANK..... student // self-taught developer |
+  | STATUS... building the empire              |
+  +--------------------------------------------+
 
-| Domain | Technologies |
-|--------|---------------|
-| **Backend Development** | Python, Java, Node.js, Go, Rust |
-| **Frontend Engineering** | TypeScript, React, Vue.js, Next.js, Svelte |
-| **Cloud & Infrastructure** | AWS, Docker, Kubernetes, Terraform, CI/CD |
-| **Database Systems** | PostgreSQL, MongoDB, Redis, Elasticsearch |
-| **DevOps & Tooling** | GitHub Actions, Jenkins, GitLab CI, Nginx |
-| **Architecture Patterns** | Microservices, Event-Driven, CQRS, DDD |
-
-### Advanced Skills
-
-- Distributed Systems Architecture
-- Performance Optimization & Profiling
-- Security & Cryptography Implementation
-- API Design & RESTful/GraphQL Services
-- Database Query Optimization
-- Containerization & Orchestration
-- Infrastructure as Code
-- Software Design Patterns & SOLID Principles
-
----
-
-## Project Categories
-
-### Featured Work
-
+sachintha@kegalle:~$ █
 ```
-Architecture & Design
-├── System Design Implementations
-├── Design Pattern Applications
-└── Scalability Solutions
-
-Open Source Contributions
-├── Core Library Enhancements
-├── Performance Improvements
-└── Community Tools
-
-Research & Exploration
-├── Emerging Technologies
-├── Experimental Implementations
-└── Performance Studies
-```
-
-### Quality Standards
-
-All projects maintain:
-- Comprehensive test coverage (unit, integration, e2e)
-- Production-grade code quality
-- Complete documentation
-- Security best practices
-- Performance benchmarks
+<!-- TERMINAL:END -->
 
 ---
 
-## Development Approach
+## 🩸 &nbsp;THE FAMILY FILE
 
-### Methodology
+|  |  |
+| :--- | :--- |
+| **👤 Alias** | `Sachintha` |
+| **🎂 Born** | <!-- AGE_TEXT:START -->**16 years old**  ·  born 11 December 2009<!-- AGE_TEXT:END --> |
+| **📍 Base** | `Kegalle`, Sri Lanka 🇱🇰 |
+| **🎓 School** | Dr. N. M. Perera Central College |
+| **💼 Rank** | Student · self-taught developer |
+| **🧠 Motto** | _learn in silence, ship in public_ |
 
-1. **Analysis & Design** - Thorough requirements analysis and architectural planning
-2. **Implementation** - Clean, maintainable code following established patterns
-3. **Testing** - Comprehensive test coverage across all levels
-4. **Documentation** - Detailed technical documentation and usage guides
-5. **Optimization** - Performance profiling and continuous improvement
-6. **Deployment** - Automated, reliable deployment pipelines
+> The age above is **not typed by hand** — it recalculates itself from the birth
+> date `2009-12-11`, so this profile never claims a year that has already passed.
 
-### Code Philosophy
+<!-- MAINTENANCE (invisible on the rendered profile):
+     The age badge, the age in the table and the terminal panel are all
+     generated by .github/scripts/update_age.py, which is run daily by
+     .github/workflows/update-age.yml.
 
-```
-Readability > Cleverness
-Maintainability > Performance (initially)
-Testability > Coverage percentage
-Documentation > Self-documenting code
-```
+     To change anything about it, edit the constants at the top of that script -
+     never the generated text between the AGE_BADGE / AGE_TEXT / TERMINAL
+     markers, because it gets overwritten.
 
----
-
-## Technical Interests
-
-### Currently Exploring
-
-- Advanced distributed systems patterns
-- High-performance computing optimization
-- Modern cryptographic applications
-- Containerization best practices
-- Cloud-native architecture patterns
-- AI/ML systems integration
-
-### Research Areas
-
-- System design scalability
-- Database optimization techniques
-- Security architecture
-- DevOps automation
-- Performance engineering
+     Heads-up: GitHub pauses scheduled workflows after 60 days of repository
+     inactivity. If the age ever stops updating, open the Actions tab and
+     re-enable "Keep the age honest" (or just click Run workflow once). -->
 
 ---
 
-## Repository Structure
+## 🔥 &nbsp;THE ARSENAL
 
-```
-sachintha82288-cpu/
-├── backend-systems/          Production backend applications
-├── frontend-applications/    Advanced UI implementations
-├── infrastructure-as-code/   Cloud & deployment configurations
-├── tools-utilities/          Reusable libraries & utilities
-├── research-experiments/     Experimental & learning projects
-└── documentation/            Technical guides & references
-```
+<div align="center">
 
----
+`⚠ CLASSIFIED — the family does not display its weapons in public.`
 
-## Quality Metrics
+</div>
 
-Each project repository includes:
-
-- **Code Coverage**: Monitored through automated testing
-- **Performance Benchmarks**: Baseline metrics and optimization tracking
-- **Security Scanning**: Dependency and vulnerability analysis
-- **Documentation**: API references, architecture diagrams, setup guides
-- **Contribution Guidelines**: Clear standards for collaboration
+<!-- TODO(Sachintha): send the languages / frameworks / tools you actually use
+     and this section becomes a proper badge grid + skill bars. -->
 
 ---
 
-## Development Standards
+## 🕴️ &nbsp;OPERATIONS
 
-### Code Quality
+<div align="center">
 
-All repositories adhere to:
+`⚠ NO OPERATIONS ON RECORD — yet. The first one is in the works.`
 
-```yaml
-Testing:
-  - Unit Tests: >90% coverage
-  - Integration Tests: Critical paths
-  - E2E Tests: User workflows
-  
-Security:
-  - SAST scanning enabled
-  - Dependency audits automated
-  - Security best practices enforced
-  
-Performance:
-  - Baseline metrics defined
-  - Load testing conducted
-  - Optimization profiling documented
-  
-Documentation:
-  - API documentation complete
-  - Setup instructions provided
-  - Architecture decisions recorded
-```
+</div>
 
-### Version Control
-
-- Semantic versioning for releases
-- Detailed commit messages
-- Feature branch workflow
-- Comprehensive pull request reviews
-- Changelog maintenance
+<!-- TODO(Sachintha): for each project send — name, one-line description, repo
+     link, and the main language. I'll build the operation cards from that. -->
 
 ---
 
-## Collaboration & Contribution
+## 📊 &nbsp;THE LEDGER
 
-I actively engage in:
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=sachintha82288-cpu&show_icons=true&hide_border=true&include_all_commits=true&bg_color=0B0B0B&title_color=FF0033&icon_color=FFD700&text_color=C9C9C9" width="54%" alt="Sachintha's GitHub stats" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sachintha82288-cpu&layout=compact&hide_border=true&bg_color=0B0B0B&title_color=FF0033&text_color=C9C9C9&langs_count=8" width="41%" alt="Most used languages" />
+</p>
 
-- Open source project participation
-- Code review and feedback
-- Technical documentation
-- Community knowledge sharing
-- Best practice development
-
-Projects are structured for:
-- Easy onboarding
-- Clear contribution guidelines
-- Comprehensive pull request templates
-- Automated quality checks
-- Collaborative development
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=sachintha82288-cpu&bg_color=0b0b0b&color=ff0033&line=ffd700&point=ffffff&area=true&area_color=ff0033&hide_border=true&custom_title=The%20Family%20Activity" width="96%" alt="Contribution activity graph" />
+</p>
 
 ---
 
-## Technology Stack Overview
+## 📡 &nbsp;SECURE CHANNELS
 
-```
-┌─────────────────────────────────────────┐
-│       MODERN DEVELOPMENT STACK          │
-├─────────────────────────────────────────┤
-│ Frontend    │ Backend     │ DevOps      │
-├─────────────┼─────────────┼─────────────┤
-│ TypeScript  │ Python      │ Docker      │
-│ React       │ Node.js     │ Kubernetes  │
-│ Next.js     │ Java        │ Terraform   │
-│ GraphQL     │ PostgreSQL  │ GitHub CI   │
-│ Tailwind    │ Redis       │ AWS         │
-└─────────────────────────────────────────┘
-```
+<div align="center">
 
----
+`⚠ CHANNELS ENCRYPTED — contact details have not been released.`
 
-## Professional Summary
+</div>
 
-**Developer Profile**: Full-stack engineer with deep expertise in system architecture, cloud infrastructure, and scalable application design. Focus on writing maintainable, performant, and secure code. Committed to continuous learning and contributing to the broader developer community.
-
-**Specializations**:
-- Enterprise-scale application development
-- Microservices architecture design
-- Cloud infrastructure automation
-- Performance-critical systems
-- Team collaboration and knowledge sharing
-
----
-
-## Key Achievements
-
-- Successfully architected and deployed multiple production systems
-- Contributed to widely-used open source projects
-- Optimized performance of legacy systems resulting in measurable improvements
-- Implemented security-first approaches across multiple applications
-- Established best practices and coding standards in team environments
-
----
-
-## Repository Navigation
-
-<table>
-<tr>
-<td width="50%">
-
-### High Priority
-
-- Active development projects
-- Production deployments
-- Core infrastructure
-
-</td>
-<td width="50%">
-
-### Ongoing
-
-- Research initiatives
-- Experimental features
-- Documentation updates
-
-</td>
-</tr>
-</table>
-
----
-
-## Continuous Improvement
-
-This profile and associated projects are continuously maintained and updated to reflect:
-
-- Latest technology trends
-- Performance optimization opportunities
-- Security best practices
-- Community feedback
-- Industry standards evolution
+<!-- TODO(Sachintha): tell me which of these to publish — email, LinkedIn, X,
+     Telegram, Discord, Instagram, personal site — and I'll wire up the icons. -->
 
 ---
 
 <div align="center">
 
-### Repository Statistics
+### 「 𝚘𝚖𝚎𝚛𝚝𝚊̀ 」
 
-[![GitHub followers](https://img.shields.io/github/followers/sachintha82288-cpu?style=flat-square&color=333)](https://github.com/sachintha82288-cpu)
-[![GitHub User's stars](https://img.shields.io/github/stars/sachintha82288-cpu?style=flat-square&color=333)](https://github.com/sachintha82288-cpu)
+**what happens in the terminal, stays in the terminal.**
 
----
+<br/>
 
-**Last Updated**: 2026-09-13
-
-*Advanced development portfolio focusing on quality, scalability, and technical excellence.*
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B0B0B,45:FF0033,100:0B0B0B&height=130&section=footer&reversal=true" width="100%" alt="" />
 
 </div>
