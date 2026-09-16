@@ -70,7 +70,7 @@ def build_terminal_svg(today: dt.date) -> str:
     ]
 
     prompt = "$ sudo ./identify --verbose"
-    prompt_px = int(len(prompt) * 8.4) + 14
+    prompt_px = int(len(prompt) * 9.9) + 10  # >= widest common mono advance (0.6em)
 
     box_x, box_y, box_w, box_h = 40, 92, 560, 270
     row_y0, row_dy = 156, 28
@@ -119,7 +119,7 @@ def build_terminal_svg(today: dt.date) -> str:
     out += [
         f'  <g clip-path="url(#typeclip)"><text x="40" y="72" font-family="{MONO}" '
         f'font-size="16" fill="#{ACCENT}">{prompt}</text></g>',
-        f'  <rect x="{40 + prompt_px + 4}" y="58" width="10" height="17" fill="#{ACCENT}">',
+        f'  <rect x="{40 + prompt_px + 8}" y="58" width="10" height="17" fill="#{ACCENT}">',
         '    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1.1s" begin="1.3s" repeatCount="indefinite"/>',
         '  </rect>',
     ]
@@ -150,7 +150,7 @@ def build_terminal_svg(today: dt.date) -> str:
     out += [
         f'  <text x="{box_x}" y="398" font-family="{MONO}" font-size="16" fill="#8B949E">'
         f'sachintha@kegalle:~$</text>',
-        f'  <rect x="{box_x + 200}" y="384" width="11" height="19" fill="#{GOLD}">',
+        f'  <rect x="{box_x + 214}" y="384" width="11" height="19" fill="#{GOLD}">',
         '    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1.1s" begin="3.2s" repeatCount="indefinite"/>',
         '  </rect>',
         '</svg>',

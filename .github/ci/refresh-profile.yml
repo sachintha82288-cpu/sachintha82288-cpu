@@ -2,6 +2,7 @@
 #   - generated/stats.svg          (generate_cards.py)
 #   - generated/languages.svg      (generate_cards.py)
 #   - generated/contributions.svg  (generate_cards.py)
+#   - generated/snake.svg          (generate_cards.py)
 #   - generated/terminal.svg       (update_age.py -- birthday-aware)
 #   - README.md age markers        (update_age.py)
 #
@@ -9,6 +10,15 @@
 # The scripts write files only when their content actually changed, so this
 # normally commits nothing (quiet runs) and only touches the repo when a
 # number moved or a birthday happened.
+#
+# ┌─────────────────────────────────────────────────────────────────────────┐
+# │ HOW TO ACTIVATE: GitHub only runs workflow files that live in           │
+# │ .github/workflows/. Move/copy this file there (Settings -> Actions      │
+# │ allows it; the sandbox bot token could not create workflow files        │
+# │ itself). Until then, run the scripts locally:                           │
+# │   python3 .github/scripts/generate_cards.py                             │
+# │   python3 .github/scripts/update_age.py                                 │
+# └─────────────────────────────────────────────────────────────────────────┘
 
 name: refresh profile
 

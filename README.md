@@ -1,13 +1,14 @@
 <!-- ═════════════════════════════════════════════════════════════════════════ -->
 <!--  sachintha82288-cpu — profile README                                      -->
 <!--                                                                           -->
-<!--  Everything animated here is either committed as a file in this repo      -->
-<!--  (assets/*.svg, generated/*.svg — plain SMIL SVGs, rendered by GitHub)    -->
-<!--  or comes from a service that is verified alive. No dead Vercel cards,    -->
-<!--  no emojis.                                                               -->
+<!--  Every animation here is a plain SMIL SVG committed to this repo          -->
+<!--  (assets/*.svg, generated/*.svg), so GitHub renders them natively and     -->
+<!--  no third-party service can switch them off.                              -->
 <!--                                                                           -->
-<!--  generated/*.svg is regenerated daily by                                  -->
-<!--  .github/workflows/refresh-profile.yml from live GitHub data.             -->
+<!--  generated/*.svg is rebuilt from live GitHub data by                      -->
+<!--  .github/scripts/generate_cards.py — normally triggered daily by          -->
+<!--  .github/ci/refresh-profile.yml (copy it to .github/workflows/ with       -->
+<!--  admin approval; the sandbox token cannot create workflows).              -->
 <!--  The age inside generated/terminal.svg self-updates on every birthday     -->
 <!--  via .github/scripts/update_age.py (birth date lives there).              -->
 <!-- ═════════════════════════════════════════════════════════════════════════ -->
@@ -79,18 +80,14 @@
 
 ## 「 CONTRIBUTION MATRIX 」
 
-*self-drawn activity grid — the snake hunts on the graph below it.*
+*self-drawn from the real contribution calendar — the snake hunts its own grid.*
 
 <p>
   <img src="generated/contributions.svg" width="100%" alt="Contribution activity grid, last 12 months" />
 </p>
 
 <p>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sachintha82288-cpu/sachintha82288-cpu/output/github-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/sachintha82288-cpu/sachintha82288-cpu/output/github-snake.svg" />
-    <img alt="Contribution snake animation" src="https://raw.githubusercontent.com/sachintha82288-cpu/sachintha82288-cpu/output/github-snake-dark.svg" width="100%" />
-  </picture>
+  <img src="generated/snake.svg" width="100%" alt="Neon snake gliding across the contribution grid" />
 </p>
 
 </div>

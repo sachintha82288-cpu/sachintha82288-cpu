@@ -8,6 +8,10 @@
       <path d="M30 0H0V30" fill="none" stroke="#00F0FF" stroke-opacity="0.07" stroke-width="1"/>
     </pattern>
     <clipPath id="clip"><rect x="1.5" y="1.5" width="617" height="337" rx="14"/></clipPath>
+    <filter id="soft" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
   <rect x="1.5" y="1.5" width="617" height="337" rx="14" fill="url(#bg)" stroke="#00F0FF" stroke-opacity="0.4" stroke-width="1.5"/>
   <g clip-path="url(#clip)"><rect width="620" height="340" fill="url(#grid)"/></g>

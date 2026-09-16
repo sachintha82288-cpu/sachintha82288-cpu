@@ -166,6 +166,10 @@ def svg_head(w: int, h: int, label: str) -> str:
       <path d="M30 0H0V30" fill="none" stroke="{ACCENT}" stroke-opacity="0.07" stroke-width="1"/>
     </pattern>
     <clipPath id="clip"><rect x="1.5" y="1.5" width="{w - 3}" height="{h - 3}" rx="14"/></clipPath>
+    <filter id="soft" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
   <rect x="1.5" y="1.5" width="{w - 3}" height="{h - 3}" rx="14" fill="url(#bg)" stroke="{ACCENT}" stroke-opacity="0.4" stroke-width="1.5"/>
   <g clip-path="url(#clip)"><rect width="{w}" height="{h}" fill="url(#grid)"/></g>
@@ -240,17 +244,16 @@ def make_languages(d: dict) -> str:
     return out
 
 
-def make_contributions(cal: dict) -> str:
-    """Self-hosted animated activity heatmap, built from the real contribution calendar."""
+def _grid_cells(weeks: list, pulse_days: bool = True) -> tuple[str, dict]:
+    """Render the heatmap cells shared by the activity grid and the snake card.
+
+    Returns (svg fragment, geometry). Cells are always visible; a dimming
+    "boot wave" sweeps left -> right once, and busy columns keep pulsing.
+    """
     import datetime as dt
 
-    weeks = cal.get("weeks") or []
-    total = cal.get("total") or sum(d["count"] for w in weeks for d in w)
-    cell, gap, pitch = 11, 3.5, 14.5
-    left = 46          # room for day labels
-    top = 64           # room for month labels
-    w = left + len(weeks) * pitch + 30
-    h = top + 7 * pitch + 66
+    pitch, cell = 14.5, 11
+    left, top = 46, 64
 
     def level(n: int) -> int:
         if n <= 0:
@@ -266,29 +269,19 @@ def make_contributions(cal: dict) -> str:
     lv_fill = ["#0D1626", "#0E4A57", "#0F7C8C", "#00C9A7", "#00FF88"]
     lv_stroke = [ACCENT, "#00F0FF", "#00F0FF", "#00FF88", "#00FF88"]
 
-    out = svg_head(w, h, f"Contribution activity grid of {USER} over the last year")
-    out += f'''  <text x="30" y="40" font-family="{MONO}" font-size="17" fill="{ACCENT}">$ ./activity --last-year</text>
-  <text x="{w - 56}" y="40" text-anchor="end" font-family="{MONO}" font-size="15" fill="{GREEN}">{total} contributions</text>
-  {led(w - 36, 35)}
-'''
-    # month labels
-    out += '  <g font-family="%s" font-size="11" fill="%s">\n' % (MONO, MUTED)
-    seen = set()
+    month_marks: list[str] = []
+    seen: set[int] = set()
     for wi, week in enumerate(weeks):
         if not week:
             continue
         d0 = dt.date.fromisoformat(week[0]["date"])
         if d0.month not in seen:
             seen.add(d0.month)
-            out += f'    <text x="{left + wi * pitch}" y="{top - 10}">{d0.strftime("%b")}</text>\n'
-    out += "  </g>\n"
-    # day-of-week labels (Mon / Wed / Fri)
-    for r, lbl in ((1, "Tue"), (3, "Thu"), (5, "Sat")):
-        out += (f'  <text x="{left - 10}" y="{top + r * pitch + 9}" text-anchor="end" '
-                f'font-family="{MONO}" font-size="11" fill="{MUTED}">{lbl}</text>\n')
-    # cells: always visible; a dimming "boot wave" sweeps left -> right once, then
-    # busy columns (3+ contributions in a day) keep gently pulsing forever
-    out += '  <g stroke-width="1">\n'
+            month_marks.append(
+                f'<text x="{left + wi * pitch}" y="{top - 10}">{d0.strftime("%b")}</text>'
+            )
+
+    cells_by_week: list[str] = []
     for wi, week in enumerate(weeks):
         cells = []
         for di, day in enumerate(week):
@@ -296,7 +289,7 @@ def make_contributions(cal: dict) -> str:
             x = left + wi * pitch
             y = top + di * pitch
             extra = ""
-            if lv > 0 and day["count"] >= 3:
+            if pulse_days and lv > 0 and day["count"] >= 3:
                 pulse = min(3.2 + day["count"] * 0.4, 5.5)
                 extra = (f'<animate attributeName="opacity" values="1;0.55;1" dur="{pulse:.1f}s" '
                          f'repeatCount="indefinite"/>')
@@ -306,9 +299,41 @@ def make_contributions(cal: dict) -> str:
                 f'{extra}</rect>'
             )
         begin = f"{0.03 * wi:.2f}s"
-        out += (f'    <g><animate attributeName="opacity" values="1;0.12;1" dur="0.5s" '
-                f'begin="{begin}" fill="freeze"/>{"".join(cells)}</g>\n')
-    out += "  </g>\n"
+        cells_by_week.append(
+            f'<g><animate attributeName="opacity" values="1;0.12;1" dur="0.5s" '
+            f'begin="{begin}" fill="freeze"/>{"".join(cells)}</g>'
+        )
+
+    frag = (
+        f'<g font-family="{MONO}" font-size="11" fill="{MUTED}">'
+        + "".join(month_marks) + "</g>"
+        + "".join(
+            f'<text x="{left - 10}" y="{top + r * pitch + 9}" text-anchor="end" '
+            f'font-family="{MONO}" font-size="11" fill="{MUTED}">{lbl}</text>'
+            for r, lbl in ((1, "Tue"), (3, "Thu"), (5, "Sat"))
+        )
+        + '<g stroke-width="1">' + "".join(cells_by_week) + "</g>"
+    )
+    geom = {"left": left, "top": top, "pitch": pitch, "cell": cell,
+            "cols": max(len(weeks), 1), "rows": 7}
+    return frag, geom
+
+
+def make_contributions(cal: dict) -> str:
+    """Self-hosted animated activity heatmap, built from the real contribution calendar."""
+    weeks = cal.get("weeks") or []
+    total = cal.get("total") or sum(d["count"] for w in weeks for d in w)
+    pitch = 14.5
+    left, top = 46, 64
+    w = left + len(weeks) * pitch + 30
+    h = top + 7 * pitch + 66
+    out = svg_head(w, h, f"Contribution activity grid of {USER} over the last year")
+    out += f'''  <text x="30" y="40" font-family="{MONO}" font-size="17" fill="{ACCENT}">$ ./activity --last-year</text>
+  <text x="{w - 56}" y="40" text-anchor="end" font-family="{MONO}" font-size="15" fill="{GREEN}">{total} contributions</text>
+  {led(w - 36, 35)}
+'''
+    # month labels, day-of-week labels and the cells themselves
+    out += _grid_cells(weeks)[0]
     # scan line sweeping the grid forever
     grid_w = len(weeks) * pitch
     out += f'''  <g clip-path="url(#clip)">
@@ -324,6 +349,99 @@ def make_contributions(cal: dict) -> str:
     return out
 
 
+def make_snake(cal: dict) -> str:
+    """The contribution snake — hunted and drawn entirely by this script.
+
+    The same activity grid as make_contributions, with a neon snake that
+    swims across it forever (SMIL animateMotion; body segments phase-shifted
+    along the same path). Lit cells ripple as the head passes their column.
+    No third-party action, no `output` branch, nothing to break.
+    """
+    import math
+
+    weeks = cal.get("weeks") or []
+    total = cal.get("total") or sum(d["count"] for w in weeks for d in w)
+    grid_frag, geom = _grid_cells(weeks)
+    left, top, pitch = geom["left"], geom["top"], geom["pitch"]
+    cols = geom["cols"]
+    w = left + cols * pitch + 30
+    grid_h = 7 * pitch
+    h = top + grid_h + 66
+
+    # ── snake path: a horizontal sine glide just above the grid ────────────
+    x0 = left - 8.0
+    x1 = left + cols * pitch + 8.0
+    cy = top + grid_h / 2 - 4
+    amp = 26.0
+    wavelength = pitch * 12.0
+    steps = 120
+    pts = []
+    for i in range(steps + 1):
+        x = x0 + (x1 - x0) * i / steps
+        y = cy + amp * math.sin(2 * math.pi * (x - x0) / wavelength)
+        pts.append((x, y))
+    path_d = f"M {pts[0][0]:.1f} {pts[0][1]:.1f} " + " ".join(
+        f"L {x:.1f} {y:.1f}" for x, y in pts[1:]
+    )
+
+    dur = 16.0  # seconds for one left -> right pass (then it loops)
+    span = x1 - x0
+    # arrival time of the head at column x (x-advance is ~linear for amp << span)
+    def pass_time(col_x: float) -> float:
+        return max(0.05, min(0.95, (col_x - x0) / span)) * dur
+
+    # ripples on lit cells as the head passes their column
+    ripples: list[str] = []
+    for wi, week in enumerate(weeks):
+        lit = [d for d in week if d["count"] > 0]
+        if not lit:
+            continue
+        t = pass_time(left + wi * pitch + pitch / 2)
+        frac = t / dur
+        y = top + 3 * pitch  # mid-grid burst
+        a, b_ = min(frac + 0.015, 0.9), min(frac + 0.06, 0.99)
+        ripples.append(
+            f'<circle cx="{left + wi * pitch + pitch / 2:.1f}" cy="{y:.1f}" r="6" fill="none" '
+            f'stroke="#{ACCENT}" stroke-width="2" opacity="0">'
+            f'<animate attributeName="r" values="5;5;24;24" keyTimes="0;{frac:.3f};{b_:.3f};1" '
+            f'dur="{dur:.2f}s" begin="0s" repeatCount="indefinite"/>'
+            f'<animate attributeName="opacity" values="0;0;0.85;0;0" '
+            f'keyTimes="0;{frac:.3f};{a:.3f};{b_:.3f};1" dur="{dur:.2f}s" begin="0s" repeatCount="indefinite"/>'
+            "</circle>"
+        )
+
+    # body segments: head first, phase-shifted along the same motion path
+    seg_colors = ["#8DFFD0", "#00FF88", "#00FF88", "#3BF0B4", "#2AD9C2",
+                  "#17C4CF", "#0FB2D6", "#00F0FF", "#00F0FF"]
+    seg_r = [7.0, 6.2, 5.6, 5.1, 4.6, 4.2, 3.8, 3.4, 3.0]
+    gap_s = 0.30
+    segments = []
+    for i, (color, r) in enumerate(zip(seg_colors, seg_r)):
+        glow = ' filter="url(#soft)"' if i == 0 else ""
+        seg = (
+            f'<circle r="{r}" fill="{color}"{glow}>'
+            f'<animateMotion dur="{dur}s" begin="{-gap_s * i:.2f}s" repeatCount="indefinite" '
+            f'path="{path_d}"/>'
+            "</circle>"
+        )
+        segments.append(seg)
+
+    out = svg_head(w, h, f"Contribution snake hunting across the activity grid of {USER}")
+    out += f'''  <text x="30" y="40" font-family="{MONO}" font-size="17" fill="{ACCENT}">$ ./release_the_snake</text>
+  <text x="{w - 56}" y="40" text-anchor="end" font-family="{MONO}" font-size="15" fill="{GREEN}">{total} contributions</text>
+  {led(w - 36, 35)}
+'''
+    out += grid_frag
+    out += "".join(ripples)
+    out += "".join(segments)
+    out += f'''  <line x1="30" y1="{h - 40}" x2="{w - 30}" y2="{h - 40}" stroke="{ACCENT}" stroke-opacity="0.2" stroke-width="1"/>
+  <text x="30" y="{h - 18}" font-family="{MONO}" font-size="13" fill="{MUTED}">github.com/{USER}</text>
+  <text x="{w - 30}" y="{h - 18}" text-anchor="end" font-family="{MONO}" font-size="12" fill="{GREEN}" opacity="0.75">HUNTING // ALWAYS</text>
+</svg>
+'''
+    return out
+
+
 def main() -> int:
     data = collect()
     OUT_DIR.mkdir(exist_ok=True)
@@ -333,6 +451,7 @@ def main() -> int:
         ("stats.svg", make_stats(data)),
         ("languages.svg", make_languages(data)),
         ("contributions.svg", make_contributions(data["calendar"])),
+        ("snake.svg", make_snake(data["calendar"])),
     )
     for name, svg in outputs:
         path = OUT_DIR / name
