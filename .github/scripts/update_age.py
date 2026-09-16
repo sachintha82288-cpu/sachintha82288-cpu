@@ -33,11 +33,11 @@ ALIAS = "Sachintha"
 BASE = "Kegalle, Sri Lanka"
 SCHOOL = "Dr. N. M. Perera Central College"
 RANK = "student // self-taught developer"
-STATUS = "building the empire"
+STATUS = "building the future"
 
-ACCENT = "FF0033"  # mafia red
-DARK = "0B0B0B"    # terminal black
-GOLD = "FFD700"    # family gold
+ACCENT = "00F0FF"  # cyber cyan
+DARK = "050A14"    # deep-space navy
+GOLD = "00FF88"    # matrix green
 
 README = pathlib.Path(__file__).resolve().parents[2] / "README.md"
 # ────────────────────────────────────────────────────────────────────────────
