@@ -1,25 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="36" viewBox="0 0 1200 36" role="img" aria-label="Neon divider">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="40" viewBox="0 0 1200 40" role="img" aria-label="Neon divider">
   <defs>
     <linearGradient id="dgrad" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#00F0FF" stop-opacity="0"/>
-      <stop offset="0.2" stop-color="#00F0FF"/>
+      <stop offset="0.18" stop-color="#00F0FF"/>
       <stop offset="0.5" stop-color="#00FF88"/>
-      <stop offset="0.8" stop-color="#00F0FF"/>
+      <stop offset="0.82" stop-color="#00F0FF"/>
       <stop offset="1" stop-color="#00F0FF" stop-opacity="0"/>
     </linearGradient>
     <filter id="dglow" x="-80%" y="-80%" width="260%" height="260%">
       <feGaussianBlur stdDeviation="3" result="b"/>
-      <feMerge>
-        <feMergeNode in="b"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
-  <rect x="40" y="17" width="1120" height="2" rx="1" fill="url(#dgrad)" opacity="0.55"/>
-  <circle r="6" fill="#00FF88" filter="url(#dglow)">
-    <animateMotion path="M40 18 L1160 18" dur="4.5s" repeatCount="indefinite"/>
+
+  <rect x="30" y="19" width="1140" height="2" rx="1" fill="url(#dgrad)" opacity="0.55"/>
+
+  <!-- center diamond, breathing -->
+  <rect x="594" y="13" width="12" height="12" rx="2" fill="none" stroke="#00FF88" stroke-width="1.6" transform="rotate(45 600 19)" filter="url(#dglow)">
+    <animateTransform attributeName="transform" type="rotate" values="45 600 19; 225 600 19; 405 600 19" dur="9s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.55;1;0.55" dur="3s" repeatCount="indefinite"/>
+  </rect>
+  <circle cx="600" cy="19" r="2" fill="#00F0FF" filter="url(#dglow)"/>
+
+  <!-- travelers, opposite directions -->
+  <circle r="5.5" fill="#00FF88" filter="url(#dglow)">
+    <animateMotion path="M40 20 L560 20" dur="4.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.92;1" dur="4.5s" repeatCount="indefinite"/>
   </circle>
   <circle r="3.5" fill="#00F0FF" filter="url(#dglow)" opacity="0.9">
-    <animateMotion path="M1160 18 L40 18" dur="6.5s" repeatCount="indefinite"/>
+    <animateMotion path="M1160 18 L640 18" dur="6.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.08;0.92;1" dur="6.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="2.5" fill="#00F0FF" filter="url(#dglow)" opacity="0.8">
+    <animateMotion path="M40 20 L1160 20" dur="13s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0.8;0.8;0" keyTimes="0;0.06;0.94;1" dur="13s" repeatCount="indefinite"/>
   </circle>
 </svg>

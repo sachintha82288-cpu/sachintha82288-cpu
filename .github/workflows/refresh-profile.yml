@@ -1,0 +1,58 @@
+# Refreshes everything that is self-generated from live GitHub data:
+#   - generated/stats.svg          (generate_cards.py)
+#   - generated/languages.svg      (generate_cards.py)
+#   - generated/contributions.svg  (generate_cards.py)
+#   - generated/terminal.svg       (update_age.py -- birthday-aware)
+#   - README.md age markers        (update_age.py)
+#
+# Uses only the built-in GITHUB_TOKEN -- no secrets to configure.
+# The scripts write files only when their content actually changed, so this
+# normally commits nothing (quiet runs) and only touches the repo when a
+# number moved or a birthday happened.
+
+name: refresh profile
+
+on:
+  schedule:
+    - cron: "30 0 * * *" # daily 00:30 UTC
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-profile
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Generate metric cards
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 .github/scripts/generate_cards.py
+
+      - name: Update age-dependent artwork
+        run: python3 .github/scripts/update_age.py
+
+      - name: Commit changes (if any)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add generated README.md
+          if git diff --cached --quiet; then
+            echo "Nothing changed -- skipping commit."
+          else
+            git commit -m "chore(profile): refresh generated cards"
+            git push
+          fi

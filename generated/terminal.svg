@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="430" viewBox="0 0 640 430" role="img" aria-label="Terminal: sachintha profile card">
+  <defs>
+    <linearGradient id="tbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#070D1A"/>
+      <stop offset="1" stop-color="#030710"/>
+    </linearGradient>
+    <linearGradient id="tscan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00F0FF" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#00F0FF" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#00F0FF" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="tclip"><rect x="2" y="2" width="636" height="426" rx="14"/></clipPath>
+    <clipPath id="typeclip"><rect x="40" y="52" width="0" height="30">
+      <animate attributeName="width" values="0;240" dur="0.9s" begin="0.3s" fill="freeze" calcMode="spline" keySplines="0.3 0.1 0.3 1"/>
+    </rect></clipPath>
+  </defs>
+  <rect x="2" y="2" width="636" height="426" rx="14" fill="url(#tbg)" stroke="#00F0FF" stroke-opacity="0.45" stroke-width="2"/>
+  <g clip-path="url(#tclip)">
+    <rect x="2" y="2" width="636" height="426" fill="none"/>
+    <rect x="2" y="0" width="636" height="46" fill="#00F0FF" opacity="0.05"/>
+    <line x1="2" y1="46" x2="638" y2="46" stroke="#00F0FF" stroke-opacity="0.3" stroke-width="1"/>
+    <rect x="2" y="0" width="636" height="60" fill="url(#tscan)" opacity="0.14">
+      <animateTransform attributeName="transform" type="translate" values="0 -70; 0 440" dur="7s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <rect x="24" y="17" width="11" height="11" rx="2.5" fill="none" stroke="#00F0FF" stroke-opacity="0.7" stroke-width="1.6"/>
+  <rect x="42" y="17" width="11" height="11" rx="2.5" fill="none" stroke="#00FF88" stroke-opacity="0.7" stroke-width="1.6"/>
+  <rect x="60" y="17" width="11" height="11" rx="2.5" fill="none" stroke="#8B949E" stroke-opacity="0.7" stroke-width="1.6"/>
+  <text x="320" y="28" text-anchor="middle" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace" font-size="14" fill="#8B949E">sachintha@kegalle: ~</text>
+  <g clip-path="url(#typeclip)"><text x="40" y="72" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace" font-size="16" fill="#00F0FF">$ sudo ./identify --verbose</text></g>
+  <rect x="284" y="58" width="10" height="17" fill="#00F0FF">
+    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1.1s" begin="1.3s" repeatCount="indefinite"/>
+  </rect>
+  <rect x="40" y="92" width="560" height="270" rx="10" fill="#00F0FF" fill-opacity="0.03" stroke="#00F0FF" stroke-opacity="0.4" stroke-width="1.5"/>
+  <text x="320" y="118" text-anchor="middle" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace" font-size="15" letter-spacing="3" fill="#00F0FF" opacity="0">[ sachintha@kegalle ]<animate attributeName="opacity" values="0;1" dur="0.4s" begin="1.1s" fill="freeze"/></text>
+  <line x1="58" y1="132" x2="582" y2="132" stroke="#00F0FF" stroke-opacity="0.25" stroke-width="1"/>
+  <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.35s" begin="1.35s" fill="freeze"/>
+    <text x="64" y="156" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace" font-size="15" fill="#8B949E">ALIAS</text>
+    <text x="190" y="156" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace" font-size="15" fill="#E6EDF3">Sachintha</text>
+  </g>
+  <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.35s" begin="1.57s" fill="freeze"/>
+    <text x="64" y="184" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace" font-size="15" fill="#8B949E">AGE</text>
+    <text x="190" y="184" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace" font-size="15" fill="#00F0FF">16 years</text>
+  </g>
+  <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.35s" begin="1.79s" fill="freeze"/>
+    <text x="64" y="212" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace" font-size="15" fill="#8B949E">BORN</text>
+    <text x="190" y="212" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace" font-size="15" fill="#E6EDF3">2009-12-11</text>
+  </g>
+  <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.35s" begin="2.01s" fill="freeze"/>
+    <text x="64" y="240" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace" font-size="15" fill="#8B949E">BASE</text>
+    <text x="190" y="240" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace" font-size="15" fill="#E6EDF3">Kegalle, Sri Lanka</text>
+  </g>
+  <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.35s" begin="2.23s" fill="freeze"/>
+    <text x="64" y="268" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace" font-size="15" fill="#8B949E">SCHOOL</text>
+    <text x="190" y="268" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace" font-size="15" fill="#E6EDF3">Dr. N. M. Perera Central College</text>
+  </g>
+  <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.35s" begin="2.45s" fill="freeze"/>
+    <text x="64" y="296" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace" font-size="15" fill="#8B949E">RANK</text>
+    <text x="190" y="296" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace" font-size="15" fill="#E6EDF3">student // self-taught developer</text>
+  </g>
+  <g opacity="0"><animate attributeName="opacity" values="0;1" dur="0.35s" begin="2.67s" fill="freeze"/>
+    <text x="64" y="324" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace" font-size="15" fill="#8B949E">STATUS</text>
+    <text x="190" y="324" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace" font-size="15" fill="#00FF88">building the future</text>
+  </g>
+  <text x="40" y="398" font-family="ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace" font-size="16" fill="#8B949E">sachintha@kegalle:~$</text>
+  <rect x="240" y="384" width="11" height="19" fill="#00FF88">
+    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1.1s" begin="3.2s" repeatCount="indefinite"/>
+  </rect>
+</svg>

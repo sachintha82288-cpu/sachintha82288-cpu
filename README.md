@@ -1,3 +1,17 @@
+<!-- ═════════════════════════════════════════════════════════════════════════ -->
+<!--  sachintha82288-cpu — profile README                                      -->
+<!--                                                                           -->
+<!--  Everything animated here is either committed as a file in this repo      -->
+<!--  (assets/*.svg, generated/*.svg — plain SMIL SVGs, rendered by GitHub)    -->
+<!--  or comes from a service that is verified alive. No dead Vercel cards,    -->
+<!--  no emojis.                                                               -->
+<!--                                                                           -->
+<!--  generated/*.svg is regenerated daily by                                  -->
+<!--  .github/workflows/refresh-profile.yml from live GitHub data.             -->
+<!--  The age inside generated/terminal.svg self-updates on every birthday     -->
+<!--  via .github/scripts/update_age.py (birth date lives there).              -->
+<!-- ═════════════════════════════════════════════════════════════════════════ -->
+
 <p align="center">
   <img src="assets/header.svg" width="100%" alt="SACHINTHA — cyber banner" />
 </p>
@@ -21,59 +35,65 @@
   <img src="assets/divider.svg" width="100%" alt="" />
 </p>
 
-<!-- TERMINAL:START -->
-```text
-sachintha@kegalle:~$ sudo ./identify --verbose
+<p align="center">
+  <img src="generated/terminal.svg" width="620" alt="Animated terminal printing sachintha's profile card" />
+</p>
 
-  +--[ sachintha@kegalle ]---------------------+
-  | ALIAS.... Sachintha                        |
-  | AGE...... 16 years                         |
-  | BORN..... 2009-12-11                       |
-  | BASE..... Kegalle, Sri Lanka               |
-  | SCHOOL... Dr. N. M. Perera Central College |
-  | RANK..... student // self-taught developer |
-  | STATUS... building the future              |
-  +--------------------------------------------+
+<div align="center">
 
-sachintha@kegalle:~$ █
-```
-<!-- TERMINAL:END -->
+## 「 SYSTEM PROFILE 」
 
-## 🛰️ &nbsp;SYSTEM PROFILE
-
-| ⚡ Field | 🛰️ Detail |
+| field | detail |
 | :--- | :--- |
-| **👤 Alias** | `Sachintha` |
-| **🎂 Born** | <!-- AGE_TEXT:START -->**16 years old**  ·  born 11 December 2009<!-- AGE_TEXT:END --> |
-| **📍 Base** | `Kegalle`, Sri Lanka 🇱🇰 |
-| **🎓 School** | Dr. N. M. Perera Central College |
-| **💼 Rank** | Student · self-taught developer |
-| **🧠 Motto** | _learn in silence, ship in public_ |
+| `alias` | **Sachintha** |
+| `age` | <!-- AGE_TEXT:START -->**16 years old**  ·  born 11 December 2009<!-- AGE_TEXT:END --> |
+| `base` | `Kegalle`, Sri Lanka |
+| `school` | Dr. N. M. Perera Central College |
+| `rank` | student · self-taught developer |
+| `motto` | *learn in silence, ship in public* |
+
+</div>
 
 <p align="center">
   <img src="assets/divider.svg" width="100%" alt="" />
 </p>
 
-## 📊 &nbsp;SYSTEM METRICS
+<div align="center">
 
-<p align="center">
-  <img src="https://github-stats-extended.vercel.app/api?username=sachintha82288-cpu&show_icons=true&hide_border=true&include_all_commits=true&bg_color=050A14&title_color=00F0FF&icon_color=00FF88&text_color=E6EDF3" width="49%" alt="GitHub stats" />
-  <img src="https://streak-stats.demolab.com?user=sachintha82288-cpu&background=050A14&stroke=00F0FF&ring=00F0FF&fire=00FF88&currStreakNum=00F0FF&sideNums=00F0FF&currStreakLabel=00FF88&sideLabels=00FF88&dates=8B949E&hide_border=true" width="49%" alt="Contribution streak" />
+## 「 SYSTEM METRICS 」
+
+*self-generated from the live GitHub API — rebuilt daily, hosted by this repo itself.*
+
+<p>
+  <img src="generated/stats.svg" width="49%" alt="GitHub stats: commits, repositories, stars, followers" />
+  <img src="generated/languages.svg" width="49%" alt="Most used languages" />
 </p>
 
+</div>
+
 <p align="center">
-  <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=sachintha82288-cpu&layout=compact&hide_border=true&bg_color=050A14&title_color=00F0FF&text_color=E6EDF3&langs_count=6" width="55%" alt="Most used languages" />
+  <img src="assets/divider.svg" width="100%" alt="" />
 </p>
 
-## 🐍 &nbsp;CONTRIBUTION MATRIX
+<div align="center">
 
-<p align="center">
+## 「 CONTRIBUTION MATRIX 」
+
+*self-drawn activity grid — the snake hunts on the graph below it.*
+
+<p>
+  <img src="generated/contributions.svg" width="100%" alt="Contribution activity grid, last 12 months" />
+</p>
+
+<p>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/sachintha82288-cpu/sachintha82288-cpu/output/github-snake-dark.svg" />
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/sachintha82288-cpu/sachintha82288-cpu/output/github-snake.svg" />
     <img alt="Contribution snake animation" src="https://raw.githubusercontent.com/sachintha82288-cpu/sachintha82288-cpu/output/github-snake-dark.svg" width="100%" />
   </picture>
 </p>
+
+</div>
 
 <p align="center">
   <img src="assets/divider.svg" width="100%" alt="" />
